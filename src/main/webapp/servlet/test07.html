@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.slim.js"
+  integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>주문</h1>
+<form method = "get" action = "/servlet/test07">
+
+
+주소<br><input type="text" id="address" name="address"><br>
+결제카드<br><input type="text" id="card" name="card"><br>
+가격<br><input type="text" id="price" name="price"><br>
+
+<!-- form에서는 버튼이 아니라 input type submit을 사용함 -->
+<input type ="submit" value="주문하기">
+</form>
+
+<div class="ordered">
+결제 금액 : 
+</div>
+
+
+<script>
+$(document).ready(function(){
+	System.out.println("실행");
+	$(".ordered").hide();
+	  
+	var addressCheck = new Boolean ( $("#address").value().includes("서울시"));
+	if(addressCheck = false){
+		alert("배달 불가 지역입니다");
+	} else if($("#card")="신한카드"){
+		alert("결제 불가 카드입니다")	;
+	} else{
+		$(".ordered").show();
+	}	  
+})
+
+</script>
+
+</body>
+</html>
