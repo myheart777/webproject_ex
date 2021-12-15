@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<a href = "/jsp/ex02_2.jsp?user_id=hagulu&age=25">파라미터 링크</a>
 
-<button onclick = "location.href = '/jsp/test02_result.jsp?type=date'" >현재 날짜</button> <br>
-<button onclick = "location.href = '/jsp/test02_result.jsp?type=time'" >현재 시간</button>
 </body>
 </html>

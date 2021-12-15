@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<button onclick = "location.href = '/jsp/test02_result.jsp?type=date'" >현재 날짜</button> <br>
-<button onclick = "location.href = '/jsp/test02_result.jsp?type=time'" >현재 시간</button>
+<h1>체격 조건 입력</h1>
+<form action = "/jsp/test03_result.jsp" method = "get">
+<input name="height">cm 
+<input name="weight">kg
+<button>계산</button>
+</form>
 </body>
 </html>
