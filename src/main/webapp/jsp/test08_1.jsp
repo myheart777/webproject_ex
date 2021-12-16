@@ -57,7 +57,7 @@ list.add(map);
 
 <h1>책 목록</h1>
 <table>
-<thead><tr>
+<thead><tr> 
 	<thead>id</thead>
 	<thead>표지</thead>
 	<thead><a>제목</a></thead>
@@ -65,11 +65,17 @@ list.add(map);
 
 
 <tbody>
+<form name = "id" method = "get" action="/jsp/test08_2.jsp">
+<%
+for(int i = 0; i < list.size(); i++){%>
 <tr>
-	<td></td>
-	<td></td>
-	<td></td>
+	<td> <%=list.get(i).get("id").toString() %></td>
+	<td><img src ="<%=list.get(i).get("image").toString()%>" width=100px height=100px></td>
+	<td><a href ="/jsp/test08_2.jsp?id=<%=list.get(i).get("id").toString()%>"><%=list.get(i).get("title").toString()%></a></td>
 </tr>
+<%}
+%>
+</form>
 </tbody>
 
 

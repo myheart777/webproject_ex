@@ -14,7 +14,7 @@
 	List<String> goodsList = Arrays.asList(new String[]{ 
 	    "저지방 우유", "요플레 4개", "딸기 1팩", "삼겹살 300g", "생수 6개", "주방 세제"
 	});
-	String tableRow = null;
+	String tableRow = "";
 	for(int i = 0; i < goodsList.size(); i++){
 		tableRow += "<tr><td>"+i+"</td><td>"+ goodsList.get(i)+"</td></tr>";
 	}

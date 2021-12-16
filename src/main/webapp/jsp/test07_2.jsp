@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import = "java.util.List" %>
-<%@ page import = "java.util.ArrayList" %>
-<%@ page import = "java.util.Arrays" %>
+
 <%@ page import="java.util.*" %>    
 <!DOCTYPE html>
 <html>
@@ -15,6 +11,7 @@
 <body>
 <%
 String menuSearch = request.getParameter("menuSearch");
+String exception = request.getParameter("exception");
 
 List<Map<String, Object>> list = new ArrayList<>();
 Map<String, Object> map = new HashMap<String, Object>() {{ put("name", "버거킹"); put("menu", "햄버거"); put("point", 4.3); } };
@@ -31,9 +28,10 @@ map = new HashMap<String, Object>() {{ put("name", "BHC"); put("menu", "치킨")
 list.add(map);
 map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
 list.add(map);
-%>
-<%= menuSearch %>
 
+
+
+%>
 
 <h1>검색 결과</h1>
 <table>
@@ -43,17 +41,31 @@ list.add(map);
 	<thead>별점</thead>
 </b><tr></thead>
 <tbody>
-
+ <% %>
+ 
 <%
+for(int i = 0; i < list.size(); i++){
+	String pointString = list.get(i).get("point").toString();
+	double point = Double.parseDouble(pointString);
+	
+	if(menuSearch.equals(list.get(i).get("menu").toString()) ){
+		
 
-for(int i = 0; i < list.size(); i++){%>
-<tr>
-	<td><%= list.get(i).get("name") %></td>
-	<td><%= list.get(i).get("menu") %></td>
-	<td><%= list.get(i).get("point") %></td>
-	<td></td>
-</tr>
-<%} %>
+		if( exception == null |( exception != null && point >= 4.0 )){%>
+					 
+			<tr>
+				<td><%= list.get(i).get("name").toString() %></td>
+				<td><%= list.get(i).get("menu").toString() %></td>
+				<td><%= list.get(i).get("point").toString() %></td>
+				<td></td>
+			</tr>
+		<% }	
+		
+	}
+	
+	
+	
+} %>
 
 
 </tbody>
